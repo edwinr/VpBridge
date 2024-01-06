@@ -63,6 +63,7 @@ internal sealed class AvatarService : BackgroundService, IAvatarService
 
     private void OnVPAvatarLeft(VirtualParadiseAvatar avatar)
     {
+        if (avatar == null) { return; }
         _logger.LogInformation("{Avatar} left ({User})", avatar, avatar.User);
 
         IBotConfiguration configuration = _configurationService.BotConfiguration;
